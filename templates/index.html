@@ -1,0 +1,17 @@
+{% extends "default.html" %}
+{% block title %}
+Heimasíða
+{% endblock %}
+
+{% block content %}
+<ul class="vorur">
+    {% for i in vorur %}
+        <li>
+            <figure>
+                <img class="vorumyndir" src="/static/img/{{ i[2] }}">
+                <figcaption><a href="/add/{{ i[0] }}">{{ i[1] }}<br>Verð: {{ i[3] }}</a></figcaption>
+            </figure>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

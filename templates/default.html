@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% include "header.html" %}
+    </header>
+    <div class="content">
+            <div class="karfa">
+                    <img src="/static/img/cart.png" id="karfa">
+                    <a href="/karfa">Það eru {{ fjoldi }} hlutir í körfunni</a>
+                </div>
+        {% block content %}{% endblock %}
+    </div>
+        <footer>{% include "footer.html" %}</footer>
+</body>
+</html>
