@@ -32,10 +32,9 @@ Karfa
             </tr>
         </tfoot>
     </table>
-    <a href="/eyda" style="margin: auto">Eyða körfu</a>
+    <a href="/eyda" id="agh"><h3>Eyða körfu</h3></a>
+    {% include "form.html" %}
 {% else %}
     <h1 style="text-align: center">Karfan er tóm</h1>
 {% endif %}
-
-<h1>{{ karfa }}</h1>
 {% endblock %}

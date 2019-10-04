@@ -96,6 +96,23 @@ table.table {
     width: 100px;
 }
 
+/* Form */
+.form {
+  display: flex;
+  flex-flow: column;
+  width: 20%;
+  margin: auto;
+}
+.form label {
+  margin: 10px;
+}
+#button {
+  width: 100px;
+}
+#agh {
+  text-align: center;
+}
+
 .vorur {
     display: flex;
     flex-flow: row;
@@ -107,6 +124,11 @@ table.table {
 .vorumyndir {
     height: 200px;
     width: auto;
+}
+.bing {
+  border: 1px black solid;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 /*footer*/

@@ -7,7 +7,7 @@ Heimasíða
 <ul class="vorur">
     {% for i in vorur %}
         <li>
-            <figure>
+            <figure class="bing">
                 <img class="vorumyndir" src="/static/img/{{ i[2] }}">
                 <figcaption><a href="/add/{{ i[0] }}">{{ i[1] }}<br>Verð: {{ i[3] }}</a></figcaption>
             </figure>

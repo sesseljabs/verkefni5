@@ -11,9 +11,14 @@ vorur = [
     [0, "Heyrnatól", "heyrnatol.jpg", 8500],
     [1, "Mús", "mus.jpg", 3000],
     [2, "Úr", "ur.jpg", 4500],
-    [0, "Heyrnatól", "heyrnatol.jpg", 8500],
-    [1, "Mús", "mus.jpg", 3000],
-    [2, "Úr", "ur.jpg", 4500]
+    [3, "Ryksuga", "ryksuga.jpg", 19000],
+    [4, "Myndavel", "myndavel.jpg", 200000],
+    [5, "Sjónvarp", "sjonvarp.jpg", 720000],
+    [6, "Rakatæki", "rakataeki.jpg", 6000],
+    [7, "Iphone 11", "iphone.jpg", 250000],
+    [8, "Minnislykill", "lykill.jpg", 10000],
+    [9, "Sous vide", "sous.jpg", 25000],
+    [10, "Nokia 3310", "nokia.jpg", 10000]
 ]
 
 @app.route("/")
@@ -40,7 +45,8 @@ def add(id):
         session["karfa"] = karfa
         fjoldi = len(karfa)
 
-    return render_template("index.html", vorur = vorur, fjoldi = fjoldi)
+    return redirect(url_for("home"))
+    #return render_template("index.html", vorur = vorur, fjoldi = fjoldi)
 
 @app.route("/karfa")
 def karfa():
@@ -71,7 +77,20 @@ def eydahlut(id):
             index = i
     karfa.pop(index)
     session["karfa"] = karfa
-    return render_template("eydavoru.html")
+    return redirect()
+
+@app.route("/result", methods=["post"])
+def result():
+    if request.method == "POST":
+        kwargs={
+            "name":request.form["nafn"],
+            "email":request.form["email"],
+            "heimili":request.form["heimili"],
+            "phone":request.form["simi"],
+            "price":request.form["samtals"]
+        }
+        eyda()
+        return render_template("result.html", **kwargs, fjoldi=0)
 
 @app.errorhandler(404)
 def pagenotfound(error):
