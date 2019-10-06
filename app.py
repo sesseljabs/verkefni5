@@ -77,7 +77,7 @@ def eydahlut(id):
             index = i
     karfa.pop(index)
     session["karfa"] = karfa
-    return redirect()
+    return redirect(url_for("karfa"))
 
 @app.route("/result", methods=["post"])
 def result():
@@ -98,5 +98,5 @@ def pagenotfound(error):
 
 
 if __name__ == "__main__":
-    #app.run(debug=True, use_reloader=True, host="192.168.1.34")
-    app.run()
+    app.run(debug=True, use_reloader=True, host="192.168.1.200")
+    #app.run()
