@@ -98,5 +98,5 @@ def pagenotfound(error):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True)
-    #app.run()
+    #app.run(debug=True, use_reloader=True, host="192.168.1.34")
+    app.run()
